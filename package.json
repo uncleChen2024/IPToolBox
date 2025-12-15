@@ -1,0 +1,12 @@
+{
+  "name": "patent-tool",
+  "version": "1.0.0",
+  "description": "专利文档处理工具",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
