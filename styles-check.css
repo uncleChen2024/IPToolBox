@@ -1,0 +1,133 @@
+/* Check Page Specific Styles */
+
+/* 1. 优化检查项排列和大小 */
+#check-page .checkbox-group.grid-2-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+}
+
+#check-page .checkbox-option {
+    padding: 6px 10px; /* 减小内边距 */
+    font-size: 0.85rem; /* 减小字体 */
+    min-height: 38px; /* 统一高度 */
+    display: flex;
+    align-items: center;
+    border-radius: var(--radius-sm);
+}
+
+#check-page .checkbox-mark {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+#check-page .checkbox-mark::after {
+    font-size: 10px; /* 减小勾选标记大小 */
+}
+
+/* 2. 检查结果容器 */
+.check-results-container {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3); /* 卡片间距 */
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: var(--gray-500);
+}
+
+/* 3. 重新设计错误卡片 (极简风格) */
+.error-card {
+    position: relative;
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: var(--space-3) var(--space-4); 
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    transition: var(--transition);
+}
+
+.error-card:hover {
+    box-shadow: var(--shadow-sm);
+    border-color: var(--gray-300);
+    transform: translateY(-1px);
+}
+
+/* 错误类型样式 */
+.error-card.error {
+    /* border-left-color: var(--error); */
+}
+
+.error-card.warning {
+    /* border-left-color: var(--warning); */
+}
+
+/* 卡片头部 */
+.error-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 垂直居中 */
+    margin-bottom: 4px;
+}
+
+.error-title {
+    font-weight: 600;
+    font-size: 0.95rem; /* 略微加大标题 */
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--gray-800);
+}
+
+/* 图标颜色 */
+.error-card.error .error-title i { 
+    color: var(--error); 
+    font-size: 1rem;
+}
+
+.error-card.warning .error-title i { 
+    color: var(--warning); 
+    font-size: 1rem;
+}
+
+/* 权利要求标签 - 统一使用中性灰，更加简洁 */
+.error-claim-ref {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    background-color: var(--gray-100);
+    border-radius: 4px; /* 更方正一点的圆角 */
+    color: var(--gray-500);
+    white-space: nowrap;
+    font-family: monospace; /* 等宽字体显示数字更整齐 */
+}
+
+/* 错误描述 */
+.error-desc {
+    font-size: 0.9rem; /* 适度加大正文 */
+    color: var(--gray-600);
+    line-height: 1.6;
+    padding-left: 28px; /* 对齐文本，避开图标宽度 */
+}
+
+/* 描述中的高亮代码 */
+.error-highlight {
+    font-family: 'Consolas', 'Monaco', monospace;
+    background-color: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    padding: 0 4px;
+    border-radius: 3px;
+    color: var(--primary); /* 使用主色调高亮关键信息 */
+    font-size: 0.85em;
+}
